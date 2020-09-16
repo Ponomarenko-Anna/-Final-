@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="1dc323eede4d4562a3e1958dd40fa2dc" Name="Diagram1">
+        <EntityTypeShape EntityType="voenniy_okrugModel.Boevaya_tehnika" Width="1.5" PointX="9.25" PointY="8.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="voenniy_okrugModel.Mladshiy_sostav" Width="1.5" PointX="0.5" PointY="4.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="voenniy_okrugModel.Mladshiy_zvanie" Width="1.5" PointX="0.5" PointY="6.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="voenniy_okrugModel.Obiedinenie" Width="1.5" PointX="10" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="voenniy_okrugModel.Obiedinenie_chast" Width="1.5" PointX="7.125" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="voenniy_okrugModel.Podrazdelenie" Width="1.5" PointX="5.75" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="voenniy_okrugModel.Sluzhashchie" Width="1.5" PointX="2.5" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="voenniy_okrugModel.Sluzhashchiy_specialnost" Width="1.5" PointX="2.5" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="voenniy_okrugModel.Sooruzhenie" Width="1.5" PointX="5" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="voenniy_okrugModel.Specialnost" Width="1.5" PointX="2.375" PointY="10.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="voenniy_okrugModel.Starshiy_sostav" Width="1.5" PointX="1.5" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="voenniy_okrugModel.Starshiy_zvanie" Width="1.5" PointX="3.25" PointY="0.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="voenniy_okrugModel.Tip_boevoy_tehniki" Width="1.5" PointX="11.5" PointY="9.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="voenniy_okrugModel.Tip_obiedineniya" Width="1.5" PointX="12.5" PointY="1.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="voenniy_okrugModel.Tip_podrazdeleniya" Width="1.5" PointX="8.625" PointY="4.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="voenniy_okrugModel.Tip_transportnoy_tehniki" Width="1.5" PointX="11.125" PointY="6.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="voenniy_okrugModel.Transportnaya_tehnika" Width="1.5" PointX="9.125" PointY="6.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="voenniy_okrugModel.Users" Width="1.5" PointX="2.125" PointY="12.375" IsExpanded="true" />
+        <AssociationConnector Association="voenniy_okrugModel.FK__Boevaya_t__podra__619B8048" ManuallyRouted="false" />
+        <AssociationConnector Association="voenniy_okrugModel.FK__Boevaya_teh__tip__60A75C0F" ManuallyRouted="false" />
+        <AssociationConnector Association="voenniy_okrugModel.FK__Mladshiy___zvani__398D8EEE" ManuallyRouted="false" />
+        <AssociationConnector Association="voenniy_okrugModel.FK__Mladshiy_sos__id__38996AB5" ManuallyRouted="false" />
+        <AssociationConnector Association="voenniy_okrugModel.FK__Obiedinen__obied__5DCAEF64" ManuallyRouted="false" />
+        <AssociationConnector Association="voenniy_okrugModel.FK__Obiedinenie__tip__44FF419A" ManuallyRouted="false" />
+        <AssociationConnector Association="voenniy_okrugModel.FK__Obiedinen__chast__5CD6CB2B" ManuallyRouted="false" />
+        <AssociationConnector Association="voenniy_okrugModel.FK__Podrazdel__id_st__3F466844" ManuallyRouted="false" />
+        <AssociationConnector Association="voenniy_okrugModel.FK__Podrazdel__koman__3E52440B" ManuallyRouted="false" />
+        <AssociationConnector Association="voenniy_okrugModel.FK__Podrazdelen__tip__403A8C7D" ManuallyRouted="false" />
+        <AssociationConnector Association="voenniy_okrugModel.FK__Sooruzhen__podra__4AB81AF0" ManuallyRouted="false" />
+        <AssociationConnector Association="voenniy_okrugModel.FK__Transport__podra__656C112C" ManuallyRouted="false" />
+        <AssociationConnector Association="voenniy_okrugModel.FK__Sluzhashc__id_st__29572725" ManuallyRouted="false" />
+        <AssociationConnector Association="voenniy_okrugModel.FK__Sluzhashc__sluzh__59063A47" ManuallyRouted="false" />
+        <AssociationConnector Association="voenniy_okrugModel.FK__Starshiy_sos__id__32E0915F" ManuallyRouted="false" />
+        <AssociationConnector Association="voenniy_okrugModel.FK__Sluzhashc__speci__59FA5E80" ManuallyRouted="false" />
+        <AssociationConnector Association="voenniy_okrugModel.FK__Starshiy___zvani__33D4B598" ManuallyRouted="false" />
+        <AssociationConnector Association="voenniy_okrugModel.FK__Transportna__tip__6477ECF3" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

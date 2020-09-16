@@ -1,0 +1,1159 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Хранилище voenniy_okrugModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Boevaya_tehnika">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="podrazdelenie" Type="int" />
+          <Property Name="tip" Type="int" />
+          <Property Name="kolichestvo" Type="int" />
+          <Property Name="dop_info" Type="text" />
+        </EntityType>
+        <EntityType Name="Mladshiy_sostav">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="zvanie" Type="int" />
+          <Property Name="dopolnitelnaya_info" Type="text" />
+        </EntityType>
+        <EntityType Name="Mladshiy_zvanie">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="zvanie" Type="varchar" MaxLength="15" />
+        </EntityType>
+        <EntityType Name="Obiedinenie">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="tip" Type="int" />
+          <Property Name="nazvanie" Type="varchar" MaxLength="30" />
+        </EntityType>
+        <EntityType Name="Obiedinenie_chast">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="obiedinenie" Type="int" />
+          <Property Name="chast" Type="int" />
+        </EntityType>
+        <EntityType Name="Podrazdelenie">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="tip" Type="int" />
+          <Property Name="nazvanie" Type="varchar" MaxLength="255" />
+          <Property Name="id_starshego" Type="int" />
+          <Property Name="komandir" Type="int" />
+          <Property Name="location" Type="varchar" MaxLength="255" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Sluzhashchie">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="imya" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="otchestvo" Type="varchar" MaxLength="30" />
+          <Property Name="familiya" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="id_starshego" Type="int" />
+        </EntityType>
+        <EntityType Name="Sluzhashchiy_specialnost">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="sluzhashchiy" Type="int" />
+          <Property Name="specialnost" Type="int" />
+        </EntityType>
+        <EntityType Name="Sooruzhenie">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="nazvanie" Type="varchar" MaxLength="255" />
+          <Property Name="podrazdelenie" Type="int" />
+        </EntityType>
+        <EntityType Name="Specialnost">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="specialnost" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="Starshiy_sostav">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="zvanie" Type="int" />
+          <Property Name="dop_info" Type="text" />
+        </EntityType>
+        <EntityType Name="Starshiy_zvanie">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="zvanie" Type="varchar" MaxLength="15" />
+        </EntityType>
+        <EntityType Name="Tip_boevoy_tehniki">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="nazvanie" Type="varchar" MaxLength="30" />
+          <Property Name="dop_info" Type="text" />
+        </EntityType>
+        <EntityType Name="Tip_obiedineniya">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="nazvanie" Type="varchar" MaxLength="15" />
+        </EntityType>
+        <EntityType Name="Tip_podrazdeleniya">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="nazvanie" Type="varchar" MaxLength="15" />
+        </EntityType>
+        <EntityType Name="Tip_transportnoy_tehniki">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="nazvanie" Type="varchar" MaxLength="30" />
+          <Property Name="dop_info" Type="text" />
+        </EntityType>
+        <EntityType Name="Transportnaya_tehnika">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="podrazdelenie" Type="int" />
+          <Property Name="tip" Type="int" />
+          <Property Name="kolichestvo" Type="int" />
+          <Property Name="dop_info" Type="text" />
+        </EntityType>
+        <EntityType Name="Users">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="login" Type="varchar" MaxLength="30" />
+          <Property Name="password" Type="varchar" MaxLength="30" />
+          <Property Name="change_rights" Type="varchar" MaxLength="6" />
+        </EntityType>
+        <Association Name="FK__Boevaya_t__podra__619B8048">
+          <End Role="Podrazdelenie" Type="Self.Podrazdelenie" Multiplicity="0..1" />
+          <End Role="Boevaya_tehnika" Type="Self.Boevaya_tehnika" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Podrazdelenie">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Boevaya_tehnika">
+              <PropertyRef Name="podrazdelenie" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Boevaya_teh__tip__60A75C0F">
+          <End Role="Tip_boevoy_tehniki" Type="Self.Tip_boevoy_tehniki" Multiplicity="0..1" />
+          <End Role="Boevaya_tehnika" Type="Self.Boevaya_tehnika" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tip_boevoy_tehniki">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Boevaya_tehnika">
+              <PropertyRef Name="tip" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Mladshiy___zvani__398D8EEE">
+          <End Role="Mladshiy_zvanie" Type="Self.Mladshiy_zvanie" Multiplicity="0..1" />
+          <End Role="Mladshiy_sostav" Type="Self.Mladshiy_sostav" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Mladshiy_zvanie">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Mladshiy_sostav">
+              <PropertyRef Name="zvanie" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Mladshiy_sos__id__38996AB5">
+          <End Role="Sluzhashchie" Type="Self.Sluzhashchie" Multiplicity="1" />
+          <End Role="Mladshiy_sostav" Type="Self.Mladshiy_sostav" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Sluzhashchie">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Mladshiy_sostav">
+              <PropertyRef Name="id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Obiedinen__chast__5CD6CB2B">
+          <End Role="Podrazdelenie" Type="Self.Podrazdelenie" Multiplicity="0..1" />
+          <End Role="Obiedinenie_chast" Type="Self.Obiedinenie_chast" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Podrazdelenie">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Obiedinenie_chast">
+              <PropertyRef Name="chast" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Obiedinen__obied__5DCAEF64">
+          <End Role="Obiedinenie" Type="Self.Obiedinenie" Multiplicity="0..1" />
+          <End Role="Obiedinenie_chast" Type="Self.Obiedinenie_chast" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Obiedinenie">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Obiedinenie_chast">
+              <PropertyRef Name="obiedinenie" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Obiedinenie__tip__44FF419A">
+          <End Role="Tip_obiedineniya" Type="Self.Tip_obiedineniya" Multiplicity="0..1" />
+          <End Role="Obiedinenie" Type="Self.Obiedinenie" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tip_obiedineniya">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Obiedinenie">
+              <PropertyRef Name="tip" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Podrazdel__id_st__3F466844">
+          <End Role="Podrazdelenie" Type="Self.Podrazdelenie" Multiplicity="0..1" />
+          <End Role="Podrazdelenie1" Type="Self.Podrazdelenie" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Podrazdelenie">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Podrazdelenie1">
+              <PropertyRef Name="id_starshego" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Podrazdel__koman__3E52440B">
+          <End Role="Sluzhashchie" Type="Self.Sluzhashchie" Multiplicity="0..1" />
+          <End Role="Podrazdelenie" Type="Self.Podrazdelenie" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sluzhashchie">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Podrazdelenie">
+              <PropertyRef Name="komandir" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Podrazdelen__tip__403A8C7D">
+          <End Role="Tip_podrazdeleniya" Type="Self.Tip_podrazdeleniya" Multiplicity="0..1" />
+          <End Role="Podrazdelenie" Type="Self.Podrazdelenie" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tip_podrazdeleniya">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Podrazdelenie">
+              <PropertyRef Name="tip" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Sluzhashc__id_st__29572725">
+          <End Role="Sluzhashchie" Type="Self.Sluzhashchie" Multiplicity="0..1" />
+          <End Role="Sluzhashchie1" Type="Self.Sluzhashchie" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sluzhashchie">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Sluzhashchie1">
+              <PropertyRef Name="id_starshego" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Sluzhashc__sluzh__59063A47">
+          <End Role="Sluzhashchie" Type="Self.Sluzhashchie" Multiplicity="0..1" />
+          <End Role="Sluzhashchiy_specialnost" Type="Self.Sluzhashchiy_specialnost" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sluzhashchie">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Sluzhashchiy_specialnost">
+              <PropertyRef Name="sluzhashchiy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Sluzhashc__speci__59FA5E80">
+          <End Role="Specialnost" Type="Self.Specialnost" Multiplicity="0..1" />
+          <End Role="Sluzhashchiy_specialnost" Type="Self.Sluzhashchiy_specialnost" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Specialnost">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Sluzhashchiy_specialnost">
+              <PropertyRef Name="specialnost" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Sooruzhen__podra__4AB81AF0">
+          <End Role="Podrazdelenie" Type="Self.Podrazdelenie" Multiplicity="0..1" />
+          <End Role="Sooruzhenie" Type="Self.Sooruzhenie" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Podrazdelenie">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Sooruzhenie">
+              <PropertyRef Name="podrazdelenie" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Starshiy___zvani__33D4B598">
+          <End Role="Starshiy_zvanie" Type="Self.Starshiy_zvanie" Multiplicity="0..1" />
+          <End Role="Starshiy_sostav" Type="Self.Starshiy_sostav" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Starshiy_zvanie">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Starshiy_sostav">
+              <PropertyRef Name="zvanie" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Starshiy_sos__id__32E0915F">
+          <End Role="Sluzhashchie" Type="Self.Sluzhashchie" Multiplicity="1" />
+          <End Role="Starshiy_sostav" Type="Self.Starshiy_sostav" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Sluzhashchie">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Starshiy_sostav">
+              <PropertyRef Name="id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Transport__podra__656C112C">
+          <End Role="Podrazdelenie" Type="Self.Podrazdelenie" Multiplicity="0..1" />
+          <End Role="Transportnaya_tehnika" Type="Self.Transportnaya_tehnika" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Podrazdelenie">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Transportnaya_tehnika">
+              <PropertyRef Name="podrazdelenie" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Transportna__tip__6477ECF3">
+          <End Role="Tip_transportnoy_tehniki" Type="Self.Tip_transportnoy_tehniki" Multiplicity="0..1" />
+          <End Role="Transportnaya_tehnika" Type="Self.Transportnaya_tehnika" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tip_transportnoy_tehniki">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Transportnaya_tehnika">
+              <PropertyRef Name="tip" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Хранилище voenniy_okrugModelContainer">
+          <EntitySet Name="Boevaya_tehnika" EntityType="Self.Boevaya_tehnika" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Mladshiy_sostav" EntityType="Self.Mladshiy_sostav" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Mladshiy_zvanie" EntityType="Self.Mladshiy_zvanie" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Obiedinenie" EntityType="Self.Obiedinenie" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Obiedinenie_chast" EntityType="Self.Obiedinenie_chast" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Podrazdelenie" EntityType="Self.Podrazdelenie" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Sluzhashchie" EntityType="Self.Sluzhashchie" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Sluzhashchiy_specialnost" EntityType="Self.Sluzhashchiy_specialnost" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Sooruzhenie" EntityType="Self.Sooruzhenie" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Specialnost" EntityType="Self.Specialnost" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Starshiy_sostav" EntityType="Self.Starshiy_sostav" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Starshiy_zvanie" EntityType="Self.Starshiy_zvanie" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tip_boevoy_tehniki" EntityType="Self.Tip_boevoy_tehniki" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tip_obiedineniya" EntityType="Self.Tip_obiedineniya" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tip_podrazdeleniya" EntityType="Self.Tip_podrazdeleniya" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tip_transportnoy_tehniki" EntityType="Self.Tip_transportnoy_tehniki" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Transportnaya_tehnika" EntityType="Self.Transportnaya_tehnika" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__Boevaya_t__podra__619B8048" Association="Self.FK__Boevaya_t__podra__619B8048">
+            <End Role="Podrazdelenie" EntitySet="Podrazdelenie" />
+            <End Role="Boevaya_tehnika" EntitySet="Boevaya_tehnika" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Boevaya_teh__tip__60A75C0F" Association="Self.FK__Boevaya_teh__tip__60A75C0F">
+            <End Role="Tip_boevoy_tehniki" EntitySet="Tip_boevoy_tehniki" />
+            <End Role="Boevaya_tehnika" EntitySet="Boevaya_tehnika" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Mladshiy___zvani__398D8EEE" Association="Self.FK__Mladshiy___zvani__398D8EEE">
+            <End Role="Mladshiy_zvanie" EntitySet="Mladshiy_zvanie" />
+            <End Role="Mladshiy_sostav" EntitySet="Mladshiy_sostav" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Mladshiy_sos__id__38996AB5" Association="Self.FK__Mladshiy_sos__id__38996AB5">
+            <End Role="Sluzhashchie" EntitySet="Sluzhashchie" />
+            <End Role="Mladshiy_sostav" EntitySet="Mladshiy_sostav" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Obiedinen__chast__5CD6CB2B" Association="Self.FK__Obiedinen__chast__5CD6CB2B">
+            <End Role="Podrazdelenie" EntitySet="Podrazdelenie" />
+            <End Role="Obiedinenie_chast" EntitySet="Obiedinenie_chast" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Obiedinen__obied__5DCAEF64" Association="Self.FK__Obiedinen__obied__5DCAEF64">
+            <End Role="Obiedinenie" EntitySet="Obiedinenie" />
+            <End Role="Obiedinenie_chast" EntitySet="Obiedinenie_chast" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Obiedinenie__tip__44FF419A" Association="Self.FK__Obiedinenie__tip__44FF419A">
+            <End Role="Tip_obiedineniya" EntitySet="Tip_obiedineniya" />
+            <End Role="Obiedinenie" EntitySet="Obiedinenie" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Podrazdel__id_st__3F466844" Association="Self.FK__Podrazdel__id_st__3F466844">
+            <End Role="Podrazdelenie" EntitySet="Podrazdelenie" />
+            <End Role="Podrazdelenie1" EntitySet="Podrazdelenie" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Podrazdel__koman__3E52440B" Association="Self.FK__Podrazdel__koman__3E52440B">
+            <End Role="Sluzhashchie" EntitySet="Sluzhashchie" />
+            <End Role="Podrazdelenie" EntitySet="Podrazdelenie" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Podrazdelen__tip__403A8C7D" Association="Self.FK__Podrazdelen__tip__403A8C7D">
+            <End Role="Tip_podrazdeleniya" EntitySet="Tip_podrazdeleniya" />
+            <End Role="Podrazdelenie" EntitySet="Podrazdelenie" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Sluzhashc__id_st__29572725" Association="Self.FK__Sluzhashc__id_st__29572725">
+            <End Role="Sluzhashchie" EntitySet="Sluzhashchie" />
+            <End Role="Sluzhashchie1" EntitySet="Sluzhashchie" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Sluzhashc__sluzh__59063A47" Association="Self.FK__Sluzhashc__sluzh__59063A47">
+            <End Role="Sluzhashchie" EntitySet="Sluzhashchie" />
+            <End Role="Sluzhashchiy_specialnost" EntitySet="Sluzhashchiy_specialnost" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Sluzhashc__speci__59FA5E80" Association="Self.FK__Sluzhashc__speci__59FA5E80">
+            <End Role="Specialnost" EntitySet="Specialnost" />
+            <End Role="Sluzhashchiy_specialnost" EntitySet="Sluzhashchiy_specialnost" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Sooruzhen__podra__4AB81AF0" Association="Self.FK__Sooruzhen__podra__4AB81AF0">
+            <End Role="Podrazdelenie" EntitySet="Podrazdelenie" />
+            <End Role="Sooruzhenie" EntitySet="Sooruzhenie" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Starshiy___zvani__33D4B598" Association="Self.FK__Starshiy___zvani__33D4B598">
+            <End Role="Starshiy_zvanie" EntitySet="Starshiy_zvanie" />
+            <End Role="Starshiy_sostav" EntitySet="Starshiy_sostav" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Starshiy_sos__id__32E0915F" Association="Self.FK__Starshiy_sos__id__32E0915F">
+            <End Role="Sluzhashchie" EntitySet="Sluzhashchie" />
+            <End Role="Starshiy_sostav" EntitySet="Starshiy_sostav" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Transport__podra__656C112C" Association="Self.FK__Transport__podra__656C112C">
+            <End Role="Podrazdelenie" EntitySet="Podrazdelenie" />
+            <End Role="Transportnaya_tehnika" EntitySet="Transportnaya_tehnika" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Transportna__tip__6477ECF3" Association="Self.FK__Transportna__tip__6477ECF3">
+            <End Role="Tip_transportnoy_tehniki" EntitySet="Tip_transportnoy_tehniki" />
+            <End Role="Transportnaya_tehnika" EntitySet="Transportnaya_tehnika" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="voenniy_okrugModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Boevaya_tehnika">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="podrazdelenie" Type="Int32" />
+          <Property Name="tip" Type="Int32" />
+          <Property Name="kolichestvo" Type="Int32" />
+          <Property Name="dop_info" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Podrazdelenie1" Relationship="Self.FK__Boevaya_t__podra__619B8048" FromRole="Boevaya_tehnika" ToRole="Podrazdelenie" />
+          <NavigationProperty Name="Tip_boevoy_tehniki" Relationship="Self.FK__Boevaya_teh__tip__60A75C0F" FromRole="Boevaya_tehnika" ToRole="Tip_boevoy_tehniki" />
+        </EntityType>
+        <EntityType Name="Mladshiy_sostav">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="zvanie" Type="Int32" />
+          <Property Name="dopolnitelnaya_info" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Mladshiy_zvanie" Relationship="Self.FK__Mladshiy___zvani__398D8EEE" FromRole="Mladshiy_sostav" ToRole="Mladshiy_zvanie" />
+          <NavigationProperty Name="Sluzhashchie" Relationship="Self.FK__Mladshiy_sos__id__38996AB5" FromRole="Mladshiy_sostav" ToRole="Sluzhashchie" />
+        </EntityType>
+        <EntityType Name="Mladshiy_zvanie">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="zvanie" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Mladshiy_sostav" Relationship="Self.FK__Mladshiy___zvani__398D8EEE" FromRole="Mladshiy_zvanie" ToRole="Mladshiy_sostav" />
+        </EntityType>
+        <EntityType Name="Obiedinenie">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="tip" Type="Int32" />
+          <Property Name="nazvanie" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Obiedinenie_chast" Relationship="Self.FK__Obiedinen__obied__5DCAEF64" FromRole="Obiedinenie" ToRole="Obiedinenie_chast" />
+          <NavigationProperty Name="Tip_obiedineniya" Relationship="Self.FK__Obiedinenie__tip__44FF419A" FromRole="Obiedinenie" ToRole="Tip_obiedineniya" />
+        </EntityType>
+        <EntityType Name="Obiedinenie_chast">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="obiedinenie" Type="Int32" />
+          <Property Name="chast" Type="Int32" />
+          <NavigationProperty Name="Obiedinenie1" Relationship="Self.FK__Obiedinen__obied__5DCAEF64" FromRole="Obiedinenie_chast" ToRole="Obiedinenie" />
+          <NavigationProperty Name="Podrazdelenie" Relationship="Self.FK__Obiedinen__chast__5CD6CB2B" FromRole="Obiedinenie_chast" ToRole="Podrazdelenie" />
+        </EntityType>
+        <EntityType Name="Podrazdelenie">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="tip" Type="Int32" />
+          <Property Name="nazvanie" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="id_starshego" Type="Int32" />
+          <Property Name="komandir" Type="Int32" />
+          <Property Name="location" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Boevaya_tehnika" Relationship="Self.FK__Boevaya_t__podra__619B8048" FromRole="Podrazdelenie" ToRole="Boevaya_tehnika" />
+          <NavigationProperty Name="Obiedinenie_chast" Relationship="Self.FK__Obiedinen__chast__5CD6CB2B" FromRole="Podrazdelenie" ToRole="Obiedinenie_chast" />
+          <NavigationProperty Name="Podrazdelenie1" Relationship="Self.FK__Podrazdel__id_st__3F466844" FromRole="Podrazdelenie" ToRole="Podrazdelenie1" />
+          <NavigationProperty Name="Podrazdelenie2" Relationship="Self.FK__Podrazdel__id_st__3F466844" FromRole="Podrazdelenie1" ToRole="Podrazdelenie" />
+          <NavigationProperty Name="Sluzhashchie" Relationship="Self.FK__Podrazdel__koman__3E52440B" FromRole="Podrazdelenie" ToRole="Sluzhashchie" />
+          <NavigationProperty Name="Tip_podrazdeleniya" Relationship="Self.FK__Podrazdelen__tip__403A8C7D" FromRole="Podrazdelenie" ToRole="Tip_podrazdeleniya" />
+          <NavigationProperty Name="Sooruzhenie" Relationship="Self.FK__Sooruzhen__podra__4AB81AF0" FromRole="Podrazdelenie" ToRole="Sooruzhenie" />
+          <NavigationProperty Name="Transportnaya_tehnika" Relationship="Self.FK__Transport__podra__656C112C" FromRole="Podrazdelenie" ToRole="Transportnaya_tehnika" />
+        </EntityType>
+        <EntityType Name="Sluzhashchie">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="imya" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="otchestvo" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="familiya" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="id_starshego" Type="Int32" />
+          <NavigationProperty Name="Mladshiy_sostav" Relationship="Self.FK__Mladshiy_sos__id__38996AB5" FromRole="Sluzhashchie" ToRole="Mladshiy_sostav" />
+          <NavigationProperty Name="Podrazdelenie" Relationship="Self.FK__Podrazdel__koman__3E52440B" FromRole="Sluzhashchie" ToRole="Podrazdelenie" />
+          <NavigationProperty Name="Sluzhashchie1" Relationship="Self.FK__Sluzhashc__id_st__29572725" FromRole="Sluzhashchie" ToRole="Sluzhashchie1" />
+          <NavigationProperty Name="Sluzhashchie2" Relationship="Self.FK__Sluzhashc__id_st__29572725" FromRole="Sluzhashchie1" ToRole="Sluzhashchie" />
+          <NavigationProperty Name="Sluzhashchiy_specialnost" Relationship="Self.FK__Sluzhashc__sluzh__59063A47" FromRole="Sluzhashchie" ToRole="Sluzhashchiy_specialnost" />
+          <NavigationProperty Name="Starshiy_sostav" Relationship="Self.FK__Starshiy_sos__id__32E0915F" FromRole="Sluzhashchie" ToRole="Starshiy_sostav" />
+        </EntityType>
+        <EntityType Name="Sluzhashchiy_specialnost">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="sluzhashchiy" Type="Int32" />
+          <Property Name="specialnost" Type="Int32" />
+          <NavigationProperty Name="Sluzhashchie" Relationship="Self.FK__Sluzhashc__sluzh__59063A47" FromRole="Sluzhashchiy_specialnost" ToRole="Sluzhashchie" />
+          <NavigationProperty Name="Specialnost1" Relationship="Self.FK__Sluzhashc__speci__59FA5E80" FromRole="Sluzhashchiy_specialnost" ToRole="Specialnost" />
+        </EntityType>
+        <EntityType Name="Sooruzhenie">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="nazvanie" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="podrazdelenie" Type="Int32" />
+          <NavigationProperty Name="Podrazdelenie1" Relationship="Self.FK__Sooruzhen__podra__4AB81AF0" FromRole="Sooruzhenie" ToRole="Podrazdelenie" />
+        </EntityType>
+        <EntityType Name="Specialnost">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="specialnost1" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Sluzhashchiy_specialnost" Relationship="Self.FK__Sluzhashc__speci__59FA5E80" FromRole="Specialnost" ToRole="Sluzhashchiy_specialnost" />
+        </EntityType>
+        <EntityType Name="Starshiy_sostav">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="zvanie" Type="Int32" />
+          <Property Name="dop_info" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Sluzhashchie" Relationship="Self.FK__Starshiy_sos__id__32E0915F" FromRole="Starshiy_sostav" ToRole="Sluzhashchie" />
+          <NavigationProperty Name="Starshiy_zvanie" Relationship="Self.FK__Starshiy___zvani__33D4B598" FromRole="Starshiy_sostav" ToRole="Starshiy_zvanie" />
+        </EntityType>
+        <EntityType Name="Starshiy_zvanie">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="zvanie" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Starshiy_sostav" Relationship="Self.FK__Starshiy___zvani__33D4B598" FromRole="Starshiy_zvanie" ToRole="Starshiy_sostav" />
+        </EntityType>
+        <EntityType Name="Tip_boevoy_tehniki">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="nazvanie" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="dop_info" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Boevaya_tehnika" Relationship="Self.FK__Boevaya_teh__tip__60A75C0F" FromRole="Tip_boevoy_tehniki" ToRole="Boevaya_tehnika" />
+        </EntityType>
+        <EntityType Name="Tip_obiedineniya">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="nazvanie" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Obiedinenie" Relationship="Self.FK__Obiedinenie__tip__44FF419A" FromRole="Tip_obiedineniya" ToRole="Obiedinenie" />
+        </EntityType>
+        <EntityType Name="Tip_podrazdeleniya">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="nazvanie" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Podrazdelenie" Relationship="Self.FK__Podrazdelen__tip__403A8C7D" FromRole="Tip_podrazdeleniya" ToRole="Podrazdelenie" />
+        </EntityType>
+        <EntityType Name="Tip_transportnoy_tehniki">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="nazvanie" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="dop_info" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Transportnaya_tehnika" Relationship="Self.FK__Transportna__tip__6477ECF3" FromRole="Tip_transportnoy_tehniki" ToRole="Transportnaya_tehnika" />
+        </EntityType>
+        <EntityType Name="Transportnaya_tehnika">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="podrazdelenie" Type="Int32" />
+          <Property Name="tip" Type="Int32" />
+          <Property Name="kolichestvo" Type="Int32" />
+          <Property Name="dop_info" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Podrazdelenie1" Relationship="Self.FK__Transport__podra__656C112C" FromRole="Transportnaya_tehnika" ToRole="Podrazdelenie" />
+          <NavigationProperty Name="Tip_transportnoy_tehniki" Relationship="Self.FK__Transportna__tip__6477ECF3" FromRole="Transportnaya_tehnika" ToRole="Tip_transportnoy_tehniki" />
+        </EntityType>
+        <EntityType Name="Users">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="login" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="password" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="change_rights" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <Association Name="FK__Boevaya_t__podra__619B8048">
+          <End Role="Podrazdelenie" Type="Self.Podrazdelenie" Multiplicity="0..1" />
+          <End Role="Boevaya_tehnika" Type="Self.Boevaya_tehnika" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Podrazdelenie">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Boevaya_tehnika">
+              <PropertyRef Name="podrazdelenie" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Boevaya_teh__tip__60A75C0F">
+          <End Role="Tip_boevoy_tehniki" Type="Self.Tip_boevoy_tehniki" Multiplicity="0..1" />
+          <End Role="Boevaya_tehnika" Type="Self.Boevaya_tehnika" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tip_boevoy_tehniki">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Boevaya_tehnika">
+              <PropertyRef Name="tip" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Mladshiy___zvani__398D8EEE">
+          <End Role="Mladshiy_zvanie" Type="Self.Mladshiy_zvanie" Multiplicity="0..1" />
+          <End Role="Mladshiy_sostav" Type="Self.Mladshiy_sostav" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Mladshiy_zvanie">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Mladshiy_sostav">
+              <PropertyRef Name="zvanie" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Mladshiy_sos__id__38996AB5">
+          <End Role="Sluzhashchie" Type="Self.Sluzhashchie" Multiplicity="1" />
+          <End Role="Mladshiy_sostav" Type="Self.Mladshiy_sostav" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Sluzhashchie">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Mladshiy_sostav">
+              <PropertyRef Name="id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Obiedinen__obied__5DCAEF64">
+          <End Role="Obiedinenie" Type="Self.Obiedinenie" Multiplicity="0..1" />
+          <End Role="Obiedinenie_chast" Type="Self.Obiedinenie_chast" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Obiedinenie">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Obiedinenie_chast">
+              <PropertyRef Name="obiedinenie" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Obiedinenie__tip__44FF419A">
+          <End Role="Tip_obiedineniya" Type="Self.Tip_obiedineniya" Multiplicity="0..1" />
+          <End Role="Obiedinenie" Type="Self.Obiedinenie" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tip_obiedineniya">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Obiedinenie">
+              <PropertyRef Name="tip" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Obiedinen__chast__5CD6CB2B">
+          <End Role="Podrazdelenie" Type="Self.Podrazdelenie" Multiplicity="0..1" />
+          <End Role="Obiedinenie_chast" Type="Self.Obiedinenie_chast" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Podrazdelenie">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Obiedinenie_chast">
+              <PropertyRef Name="chast" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Podrazdel__id_st__3F466844">
+          <End Role="Podrazdelenie" Type="Self.Podrazdelenie" Multiplicity="0..1" />
+          <End Role="Podrazdelenie1" Type="Self.Podrazdelenie" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Podrazdelenie">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Podrazdelenie1">
+              <PropertyRef Name="id_starshego" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Podrazdel__koman__3E52440B">
+          <End Role="Sluzhashchie" Type="Self.Sluzhashchie" Multiplicity="0..1" />
+          <End Role="Podrazdelenie" Type="Self.Podrazdelenie" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sluzhashchie">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Podrazdelenie">
+              <PropertyRef Name="komandir" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Podrazdelen__tip__403A8C7D">
+          <End Role="Tip_podrazdeleniya" Type="Self.Tip_podrazdeleniya" Multiplicity="0..1" />
+          <End Role="Podrazdelenie" Type="Self.Podrazdelenie" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tip_podrazdeleniya">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Podrazdelenie">
+              <PropertyRef Name="tip" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Sooruzhen__podra__4AB81AF0">
+          <End Role="Podrazdelenie" Type="Self.Podrazdelenie" Multiplicity="0..1" />
+          <End Role="Sooruzhenie" Type="Self.Sooruzhenie" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Podrazdelenie">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Sooruzhenie">
+              <PropertyRef Name="podrazdelenie" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Transport__podra__656C112C">
+          <End Role="Podrazdelenie" Type="Self.Podrazdelenie" Multiplicity="0..1" />
+          <End Role="Transportnaya_tehnika" Type="Self.Transportnaya_tehnika" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Podrazdelenie">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Transportnaya_tehnika">
+              <PropertyRef Name="podrazdelenie" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Sluzhashc__id_st__29572725">
+          <End Role="Sluzhashchie" Type="Self.Sluzhashchie" Multiplicity="0..1" />
+          <End Role="Sluzhashchie1" Type="Self.Sluzhashchie" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sluzhashchie">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Sluzhashchie1">
+              <PropertyRef Name="id_starshego" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Sluzhashc__sluzh__59063A47">
+          <End Role="Sluzhashchie" Type="Self.Sluzhashchie" Multiplicity="0..1" />
+          <End Role="Sluzhashchiy_specialnost" Type="Self.Sluzhashchiy_specialnost" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sluzhashchie">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Sluzhashchiy_specialnost">
+              <PropertyRef Name="sluzhashchiy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Starshiy_sos__id__32E0915F">
+          <End Role="Sluzhashchie" Type="Self.Sluzhashchie" Multiplicity="1" />
+          <End Role="Starshiy_sostav" Type="Self.Starshiy_sostav" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Sluzhashchie">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Starshiy_sostav">
+              <PropertyRef Name="id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Sluzhashc__speci__59FA5E80">
+          <End Role="Specialnost" Type="Self.Specialnost" Multiplicity="0..1" />
+          <End Role="Sluzhashchiy_specialnost" Type="Self.Sluzhashchiy_specialnost" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Specialnost">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Sluzhashchiy_specialnost">
+              <PropertyRef Name="specialnost" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Starshiy___zvani__33D4B598">
+          <End Role="Starshiy_zvanie" Type="Self.Starshiy_zvanie" Multiplicity="0..1" />
+          <End Role="Starshiy_sostav" Type="Self.Starshiy_sostav" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Starshiy_zvanie">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Starshiy_sostav">
+              <PropertyRef Name="zvanie" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Transportna__tip__6477ECF3">
+          <End Role="Tip_transportnoy_tehniki" Type="Self.Tip_transportnoy_tehniki" Multiplicity="0..1" />
+          <End Role="Transportnaya_tehnika" Type="Self.Transportnaya_tehnika" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tip_transportnoy_tehniki">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Transportnaya_tehnika">
+              <PropertyRef Name="tip" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="voenniy_okrugEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Boevaya_tehnika" EntityType="Self.Boevaya_tehnika" />
+          <EntitySet Name="Mladshiy_sostav" EntityType="Self.Mladshiy_sostav" />
+          <EntitySet Name="Mladshiy_zvanie" EntityType="Self.Mladshiy_zvanie" />
+          <EntitySet Name="Obiedinenie" EntityType="Self.Obiedinenie" />
+          <EntitySet Name="Obiedinenie_chast" EntityType="Self.Obiedinenie_chast" />
+          <EntitySet Name="Podrazdelenie" EntityType="Self.Podrazdelenie" />
+          <EntitySet Name="Sluzhashchie" EntityType="Self.Sluzhashchie" />
+          <EntitySet Name="Sluzhashchiy_specialnost" EntityType="Self.Sluzhashchiy_specialnost" />
+          <EntitySet Name="Sooruzhenie" EntityType="Self.Sooruzhenie" />
+          <EntitySet Name="Specialnost" EntityType="Self.Specialnost" />
+          <EntitySet Name="Starshiy_sostav" EntityType="Self.Starshiy_sostav" />
+          <EntitySet Name="Starshiy_zvanie" EntityType="Self.Starshiy_zvanie" />
+          <EntitySet Name="Tip_boevoy_tehniki" EntityType="Self.Tip_boevoy_tehniki" />
+          <EntitySet Name="Tip_obiedineniya" EntityType="Self.Tip_obiedineniya" />
+          <EntitySet Name="Tip_podrazdeleniya" EntityType="Self.Tip_podrazdeleniya" />
+          <EntitySet Name="Tip_transportnoy_tehniki" EntityType="Self.Tip_transportnoy_tehniki" />
+          <EntitySet Name="Transportnaya_tehnika" EntityType="Self.Transportnaya_tehnika" />
+          <EntitySet Name="Users" EntityType="Self.Users" />
+          <AssociationSet Name="FK__Boevaya_t__podra__619B8048" Association="Self.FK__Boevaya_t__podra__619B8048">
+            <End Role="Podrazdelenie" EntitySet="Podrazdelenie" />
+            <End Role="Boevaya_tehnika" EntitySet="Boevaya_tehnika" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Boevaya_teh__tip__60A75C0F" Association="Self.FK__Boevaya_teh__tip__60A75C0F">
+            <End Role="Tip_boevoy_tehniki" EntitySet="Tip_boevoy_tehniki" />
+            <End Role="Boevaya_tehnika" EntitySet="Boevaya_tehnika" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Mladshiy___zvani__398D8EEE" Association="Self.FK__Mladshiy___zvani__398D8EEE">
+            <End Role="Mladshiy_zvanie" EntitySet="Mladshiy_zvanie" />
+            <End Role="Mladshiy_sostav" EntitySet="Mladshiy_sostav" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Mladshiy_sos__id__38996AB5" Association="Self.FK__Mladshiy_sos__id__38996AB5">
+            <End Role="Sluzhashchie" EntitySet="Sluzhashchie" />
+            <End Role="Mladshiy_sostav" EntitySet="Mladshiy_sostav" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Obiedinen__obied__5DCAEF64" Association="Self.FK__Obiedinen__obied__5DCAEF64">
+            <End Role="Obiedinenie" EntitySet="Obiedinenie" />
+            <End Role="Obiedinenie_chast" EntitySet="Obiedinenie_chast" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Obiedinenie__tip__44FF419A" Association="Self.FK__Obiedinenie__tip__44FF419A">
+            <End Role="Tip_obiedineniya" EntitySet="Tip_obiedineniya" />
+            <End Role="Obiedinenie" EntitySet="Obiedinenie" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Obiedinen__chast__5CD6CB2B" Association="Self.FK__Obiedinen__chast__5CD6CB2B">
+            <End Role="Podrazdelenie" EntitySet="Podrazdelenie" />
+            <End Role="Obiedinenie_chast" EntitySet="Obiedinenie_chast" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Podrazdel__id_st__3F466844" Association="Self.FK__Podrazdel__id_st__3F466844">
+            <End Role="Podrazdelenie" EntitySet="Podrazdelenie" />
+            <End Role="Podrazdelenie1" EntitySet="Podrazdelenie" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Podrazdel__koman__3E52440B" Association="Self.FK__Podrazdel__koman__3E52440B">
+            <End Role="Sluzhashchie" EntitySet="Sluzhashchie" />
+            <End Role="Podrazdelenie" EntitySet="Podrazdelenie" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Podrazdelen__tip__403A8C7D" Association="Self.FK__Podrazdelen__tip__403A8C7D">
+            <End Role="Tip_podrazdeleniya" EntitySet="Tip_podrazdeleniya" />
+            <End Role="Podrazdelenie" EntitySet="Podrazdelenie" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Sooruzhen__podra__4AB81AF0" Association="Self.FK__Sooruzhen__podra__4AB81AF0">
+            <End Role="Podrazdelenie" EntitySet="Podrazdelenie" />
+            <End Role="Sooruzhenie" EntitySet="Sooruzhenie" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Transport__podra__656C112C" Association="Self.FK__Transport__podra__656C112C">
+            <End Role="Podrazdelenie" EntitySet="Podrazdelenie" />
+            <End Role="Transportnaya_tehnika" EntitySet="Transportnaya_tehnika" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Sluzhashc__id_st__29572725" Association="Self.FK__Sluzhashc__id_st__29572725">
+            <End Role="Sluzhashchie" EntitySet="Sluzhashchie" />
+            <End Role="Sluzhashchie1" EntitySet="Sluzhashchie" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Sluzhashc__sluzh__59063A47" Association="Self.FK__Sluzhashc__sluzh__59063A47">
+            <End Role="Sluzhashchie" EntitySet="Sluzhashchie" />
+            <End Role="Sluzhashchiy_specialnost" EntitySet="Sluzhashchiy_specialnost" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Starshiy_sos__id__32E0915F" Association="Self.FK__Starshiy_sos__id__32E0915F">
+            <End Role="Sluzhashchie" EntitySet="Sluzhashchie" />
+            <End Role="Starshiy_sostav" EntitySet="Starshiy_sostav" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Sluzhashc__speci__59FA5E80" Association="Self.FK__Sluzhashc__speci__59FA5E80">
+            <End Role="Specialnost" EntitySet="Specialnost" />
+            <End Role="Sluzhashchiy_specialnost" EntitySet="Sluzhashchiy_specialnost" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Starshiy___zvani__33D4B598" Association="Self.FK__Starshiy___zvani__33D4B598">
+            <End Role="Starshiy_zvanie" EntitySet="Starshiy_zvanie" />
+            <End Role="Starshiy_sostav" EntitySet="Starshiy_sostav" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Transportna__tip__6477ECF3" Association="Self.FK__Transportna__tip__6477ECF3">
+            <End Role="Tip_transportnoy_tehniki" EntitySet="Tip_transportnoy_tehniki" />
+            <End Role="Transportnaya_tehnika" EntitySet="Transportnaya_tehnika" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Хранилище voenniy_okrugModelContainer" CdmEntityContainer="voenniy_okrugEntities">
+          <EntitySetMapping Name="Boevaya_tehnika">
+            <EntityTypeMapping TypeName="voenniy_okrugModel.Boevaya_tehnika">
+              <MappingFragment StoreEntitySet="Boevaya_tehnika">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="podrazdelenie" ColumnName="podrazdelenie" />
+                <ScalarProperty Name="tip" ColumnName="tip" />
+                <ScalarProperty Name="kolichestvo" ColumnName="kolichestvo" />
+                <ScalarProperty Name="dop_info" ColumnName="dop_info" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Mladshiy_sostav">
+            <EntityTypeMapping TypeName="voenniy_okrugModel.Mladshiy_sostav">
+              <MappingFragment StoreEntitySet="Mladshiy_sostav">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="zvanie" ColumnName="zvanie" />
+                <ScalarProperty Name="dopolnitelnaya_info" ColumnName="dopolnitelnaya_info" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Mladshiy_zvanie">
+            <EntityTypeMapping TypeName="voenniy_okrugModel.Mladshiy_zvanie">
+              <MappingFragment StoreEntitySet="Mladshiy_zvanie">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="zvanie" ColumnName="zvanie" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Obiedinenie">
+            <EntityTypeMapping TypeName="voenniy_okrugModel.Obiedinenie">
+              <MappingFragment StoreEntitySet="Obiedinenie">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="tip" ColumnName="tip" />
+                <ScalarProperty Name="nazvanie" ColumnName="nazvanie" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Obiedinenie_chast">
+            <EntityTypeMapping TypeName="voenniy_okrugModel.Obiedinenie_chast">
+              <MappingFragment StoreEntitySet="Obiedinenie_chast">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="obiedinenie" ColumnName="obiedinenie" />
+                <ScalarProperty Name="chast" ColumnName="chast" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Podrazdelenie">
+            <EntityTypeMapping TypeName="voenniy_okrugModel.Podrazdelenie">
+              <MappingFragment StoreEntitySet="Podrazdelenie">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="tip" ColumnName="tip" />
+                <ScalarProperty Name="nazvanie" ColumnName="nazvanie" />
+                <ScalarProperty Name="id_starshego" ColumnName="id_starshego" />
+                <ScalarProperty Name="komandir" ColumnName="komandir" />
+                <ScalarProperty Name="location" ColumnName="location" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Sluzhashchie">
+            <EntityTypeMapping TypeName="voenniy_okrugModel.Sluzhashchie">
+              <MappingFragment StoreEntitySet="Sluzhashchie">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="imya" ColumnName="imya" />
+                <ScalarProperty Name="otchestvo" ColumnName="otchestvo" />
+                <ScalarProperty Name="familiya" ColumnName="familiya" />
+                <ScalarProperty Name="id_starshego" ColumnName="id_starshego" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Sluzhashchiy_specialnost">
+            <EntityTypeMapping TypeName="voenniy_okrugModel.Sluzhashchiy_specialnost">
+              <MappingFragment StoreEntitySet="Sluzhashchiy_specialnost">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="sluzhashchiy" ColumnName="sluzhashchiy" />
+                <ScalarProperty Name="specialnost" ColumnName="specialnost" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Sooruzhenie">
+            <EntityTypeMapping TypeName="voenniy_okrugModel.Sooruzhenie">
+              <MappingFragment StoreEntitySet="Sooruzhenie">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="nazvanie" ColumnName="nazvanie" />
+                <ScalarProperty Name="podrazdelenie" ColumnName="podrazdelenie" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Specialnost">
+            <EntityTypeMapping TypeName="voenniy_okrugModel.Specialnost">
+              <MappingFragment StoreEntitySet="Specialnost">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="specialnost1" ColumnName="specialnost" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Starshiy_sostav">
+            <EntityTypeMapping TypeName="voenniy_okrugModel.Starshiy_sostav">
+              <MappingFragment StoreEntitySet="Starshiy_sostav">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="zvanie" ColumnName="zvanie" />
+                <ScalarProperty Name="dop_info" ColumnName="dop_info" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Starshiy_zvanie">
+            <EntityTypeMapping TypeName="voenniy_okrugModel.Starshiy_zvanie">
+              <MappingFragment StoreEntitySet="Starshiy_zvanie">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="zvanie" ColumnName="zvanie" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tip_boevoy_tehniki">
+            <EntityTypeMapping TypeName="voenniy_okrugModel.Tip_boevoy_tehniki">
+              <MappingFragment StoreEntitySet="Tip_boevoy_tehniki">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="nazvanie" ColumnName="nazvanie" />
+                <ScalarProperty Name="dop_info" ColumnName="dop_info" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tip_obiedineniya">
+            <EntityTypeMapping TypeName="voenniy_okrugModel.Tip_obiedineniya">
+              <MappingFragment StoreEntitySet="Tip_obiedineniya">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="nazvanie" ColumnName="nazvanie" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tip_podrazdeleniya">
+            <EntityTypeMapping TypeName="voenniy_okrugModel.Tip_podrazdeleniya">
+              <MappingFragment StoreEntitySet="Tip_podrazdeleniya">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="nazvanie" ColumnName="nazvanie" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tip_transportnoy_tehniki">
+            <EntityTypeMapping TypeName="voenniy_okrugModel.Tip_transportnoy_tehniki">
+              <MappingFragment StoreEntitySet="Tip_transportnoy_tehniki">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="nazvanie" ColumnName="nazvanie" />
+                <ScalarProperty Name="dop_info" ColumnName="dop_info" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Transportnaya_tehnika">
+            <EntityTypeMapping TypeName="voenniy_okrugModel.Transportnaya_tehnika">
+              <MappingFragment StoreEntitySet="Transportnaya_tehnika">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="podrazdelenie" ColumnName="podrazdelenie" />
+                <ScalarProperty Name="tip" ColumnName="tip" />
+                <ScalarProperty Name="kolichestvo" ColumnName="kolichestvo" />
+                <ScalarProperty Name="dop_info" ColumnName="dop_info" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="voenniy_okrugModel.Users">
+              <MappingFragment StoreEntitySet="Users">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="login" ColumnName="login" />
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="change_rights" ColumnName="change_rights" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Нет" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
